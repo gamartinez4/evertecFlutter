@@ -1,10 +1,5 @@
 import 'dart:convert';
-import '../../utils/extension.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import '../entities/country_data.dart';
-import '../injection.dart';
 import 'package:http/http.dart' as http;
 
 

@@ -14,50 +14,64 @@ class LoginScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    
     final isPasswordVisible = useState(false);
-
-
+    
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
+        child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-              Image.asset('assets/sentada.webp', fit: BoxFit.cover),
-              const SizedBox(height: 20),
-              const Text(
-                'Bienvenido a:',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Container(
+                margin: EdgeInsets.zero,
+                child: Stack(children: [
+                  Image.asset('assets/sentada.webp', fit: BoxFit.cover),
+                  Positioned(
+                    left: 20,
+                    bottom: 20,
+                    child: Column(children: [
+                      const Text(
+                          'Bienvenido a:',
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                        const Text(
+                          'Evertec',
+                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.orange),
+                        ),
+                    ],)
+                  
+                  )
+                ],)
+                  
               ),
-              const Text(
-                'Evertec',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.orange),
-              ),
-              const SizedBox(height: 20),
-              TextFormField(
+              SizedBox(height: 30),
+              Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Tipo Documento:',
                   border: OutlineInputBorder(),
                 ),
                 controller: textControllers[0],
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
+              )),
+               SizedBox(height: 10),
+              Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: TextFormField(
                 decoration: const InputDecoration(
                   labelText: 'Número Documento:',
                   border: OutlineInputBorder(),
-                  
                 ),
                 controller: textControllers[1]
-              ),
-              const SizedBox(height: 10),
-              TextFormField(
+              )),
+                SizedBox(height: 10),
+              Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                child: TextFormField(
                 obscureText: !isPasswordVisible.value,
                 decoration: InputDecoration(
                   labelText: 'Contraseña:',
-                  border: const OutlineInputBorder(),
+                  border:  OutlineInputBorder(),
                   suffixIcon: IconButton(
                     icon: Icon(
                     
@@ -70,7 +84,7 @@ class LoginScreen extends HookConsumerWidget {
                   )
                 ),
                 controller: textControllers[2]
-              ),
+              )),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
@@ -183,7 +197,7 @@ class LoginScreen extends HookConsumerWidget {
               ),
             ],
           ),
-        ),
+        
       ),
     );
   }

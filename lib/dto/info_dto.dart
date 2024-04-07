@@ -1,7 +1,7 @@
 class InfoDto{
-  String stateName;
-  String stateInitials;
-  String twitter;
+  String? stateName;
+  String? stateInitials;
+  String? twitter;
 
 
   InfoDto({
@@ -20,13 +20,13 @@ class InfoDto{
 
   @override
   String toString(){
-    return 'InfoDto{id: $stateName, "twitter": $twitter, ".stateInitials" : $stateInitials}';
+    return 'InfoDto{stateName: $stateName, "twitter": $twitter, "stateInitials" : $stateInitials}';
   }
 
   factory InfoDto.fromJson(Map<String, dynamic> json) => InfoDto(
-    stateName: json["state"],
-    stateInitials: json["name"],
-    twitter: json["twitter"],
+    stateName: json["name"].toString(),
+    stateInitials: json["state"].toString(),
+    twitter: json["twitter"].toString(),
   );
 
 }

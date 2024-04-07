@@ -11,11 +11,11 @@ class RegionInfoNotifier extends ChangeNotifier{
 
   RegionInfoNotifier(this._apiRegions);
 
-  final List<RegionData> _regionsData = [];
+  List<RegionData> _regionsData = [];
   List<RegionData> get regionsData => _regionsData;
   
   void _setRegionsData(List<RegionData> regionsData){
-    regionsData = regionsData;
+    _regionsData = List<RegionData>.from(regionsData.map((e) => e));
     notifyListeners();
   }
 

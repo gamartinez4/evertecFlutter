@@ -71,7 +71,10 @@ class MainScreen extends HookConsumerWidget {
               padding: EdgeInsets.all(20),
               child: Text('El proyecto COVID Tracking ha finalizado todarecopilación de datos a partir del 7 de marzo de 2021',style: TextStyle(fontSize: 11, color: Colors.grey))
               ),
-              FloatingActionButton(onPressed: ()=>Navigator.pushNamed(context, "/list"))
+              FloatingActionButton(
+                onPressed: ()=>Navigator.pushNamed(context, "/list"), 
+                child: const Icon(Icons.add, color: Colors.white, size: 28),
+                )
           
           ],),
         Positioned(

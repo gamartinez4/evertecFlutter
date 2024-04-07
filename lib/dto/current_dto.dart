@@ -1,10 +1,10 @@
 class CurrentDto{
-  String stateInitials;
-  String totalCases;
-  String lastModification;
-  String deathConfirmed;
-  String positive;
-  String negative;
+  String? stateInitials;
+  String? totalCases;
+  String? lastModification;
+  String? deathConfirmed;
+  String? positive;
+  String? negative;
 
  CurrentDto({
     this.stateInitials = "",
@@ -28,16 +28,16 @@ class CurrentDto{
 
   @override
   String toString(){
-    return 'CurrentDto{id: $stateInitials, totalCases: $totalCases, lastModification: $lastModification, deathConfirmed: $deathConfirmed, "positive": $positive, "negative" : $negative}';
+    return 'CurrentDto{stateInitials: $stateInitials, totalCases: $totalCases, lastModification: $lastModification, deathConfirmed: $deathConfirmed, "positive": $positive, "negative" : $negative}';
   }
 
   factory CurrentDto.fromJson(Map<String, dynamic> json) => CurrentDto(
-    stateInitials: json["state"],
-    totalCases:  json["totalCases"],
-    lastModification: json["dateModified"],
-    deathConfirmed: json["deathConfirmed"],
-    positive: json["positive"],
-    negative: json["negative"],
+    stateInitials: json["state"].toString(),
+    totalCases:  json["total"].toString(),
+    lastModification: json["dateModified"].toString(),
+    deathConfirmed: json["deathConfirmed"].toString(),
+    positive: json["positive"].toString(),
+    negative: json["negative"].toString(),
   );
  
 }
