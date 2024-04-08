@@ -1,8 +1,9 @@
 import 'dart:convert';
 
+import 'package:ceiba_flutter/data_source/interface/i_api_login.dart';
 import 'package:flutter/services.dart';
 
-class ApiLogin{
+class ApiLogin implements IApiLogin{
 
   Future<bool> verifyCredentials(String credentials) async {
     try {

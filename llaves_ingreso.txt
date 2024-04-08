@@ -1,1 +1,1 @@
-{"document_type" : "CC", "document_number" : "123456", "password" : "mi_contra"}
+{"document_type" : "c", "document_number" : "12", "password" : "34"}

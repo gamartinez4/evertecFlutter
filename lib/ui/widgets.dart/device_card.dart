@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -9,8 +10,9 @@ import '../../entities/device_info_data.dart';
 class DeviceInfoCard extends HookConsumerWidget {
   
   DeviceInfoData deviceInfoData;
+  ValueNotifier<bool> darkTheme;
 
-  DeviceInfoCard({required this.deviceInfoData});
+  DeviceInfoCard({required this.deviceInfoData,required this.darkTheme});
 
   @override
   Widget build(BuildContext context, WidgetRef ref
@@ -75,8 +77,12 @@ class DeviceInfoCard extends HookConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
             Switch(
-              value: true,
-              onChanged: (value) {},
+              value: darkTheme.value,
+              onChanged: (value) {
+                if(value)AdaptiveTheme.of(context).setDark();
+                else AdaptiveTheme.of(context).setLight();
+                darkTheme.value = value;
+               },
               ),
                SvgPicture.asset('assets/moon.svg', height: 20,width: 20,), 
                   

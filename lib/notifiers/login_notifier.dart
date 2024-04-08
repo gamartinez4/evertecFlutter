@@ -1,13 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-
-import '../data_source/api_login.dart';
+import '../data_source/interface/i_api_login.dart';
 
 
 class LoginNotifier extends ChangeNotifier{
 
-  final ApiLogin apiLogin;
+  final IApiLogin apiLogin;
 
   LoginNotifier(this.apiLogin);
 

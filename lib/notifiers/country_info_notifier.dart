@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
 
-import '../data_source/api_country.dart';
+import '../data_source/interface/i_api_country.dart';
 import '../entities/country_data.dart';
 
 class CountryInfoNotifier extends ChangeNotifier{
   
-  final ApiCountry _apiCountry;
+  final IApiCountry _apiCountry;
 
   CountryInfoNotifier(this._apiCountry);
 

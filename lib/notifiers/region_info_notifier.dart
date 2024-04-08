@@ -1,13 +1,12 @@
 
 import 'package:flutter/material.dart';
-
-import '../data_source/api_regions.dart';
+import '../data_source/interface/i_api_regions.dart';
 import '../entities/region_data.dart';
 
 
 class RegionInfoNotifier extends ChangeNotifier{
   
-  final ApiRegions _apiRegions;
+  final IApiRegions _apiRegions;
 
   RegionInfoNotifier(this._apiRegions);
 

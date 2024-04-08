@@ -1,12 +1,14 @@
 
-import '../dto/current_dto.dart';
-import '../dto/info_dto.dart';
+import 'package:ceiba_flutter/data_source/interface/i_api_regions.dart';
+
+import '../../dto/current_dto.dart';
+import '../../dto/info_dto.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-import '../entities/region_data.dart';
+import '../../entities/region_data.dart';
 
-class ApiRegions{
+class ApiRegions implements IApiRegions{
 
     Future<List<InfoDto>> retrieveInfoDtoData() async {
       final url = Uri.parse('https://api.covidtracking.com/v1/states/info.json');
